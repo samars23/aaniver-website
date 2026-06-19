@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ ADD HERE -->
+    <meta name="description" content="Aaniver Environmental Foundation restoring water, forests, and rivers across Tamil Nadu. Join us to save the future.">
+
+    <meta name="keywords" content="environment NGO Tamil Nadu, water conservation India, forest restoration, river cleaning">
+
+    <meta name="author" content="Aaniver Foundation">
+
+    <meta property="og:title" content="Aaniver | Earth's Future">
+    <meta property="og:description" content="Save Water. Save the Future.">
+    <meta property="og:image" content="https://i.ibb.co/rGmr2T9D/file-00000000293861fdb823632aa02f6294.png">
+    <meta property="og:type" content="website">
+    <!-- ✅ END -->
+
+    <link rel="icon" type="image/png" href="...">
+    <title>Aaniver | Earth's Future</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cursor elements -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- LOADER -->
+<div id="loader">
+  <div class="loader-content">
+    
+    <div class="loader-brand" lang="ta">
+      ஆணிவேர்.
+      <span id="loader-fill">ஆணிவேர்.</span>
+    </div>
+
+    <svg id="rootSvg" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+      <path id="mainRoot" 
+            d="M100 0 Q105 40 100 80 Q95 120 100 150" 
+            stroke="#81c784" 
+            stroke-width="3" 
+            fill="none" 
+            stroke-linecap="round"
+            stroke-dasharray="200" 
+            stroke-dashoffset="200" />
+      
+      <path id="branch1" 
+            d="M102 50 Q120 70 140 75" 
+            stroke="#81c784" 
+            stroke-width="1.5" 
+            fill="none" 
+            stroke-dasharray="60" 
+            stroke-dashoffset="60" />
+
+      <path id="branch2" 
+            d="M98 90 Q70 110 50 115" 
+            stroke="#81c784" 
+            stroke-width="1.5" 
+            fill="none" 
+            stroke-dasharray="60" 
+            stroke-dashoffset="60" />
+    </svg>
+
+    <p class="loader-tag">வருங்காலத்திற்கான விதை — ஒரு துளி, ஒரு வேர்</p>
+  </div>
+  
+  <div class="loader-progress-container">
+    <div id="progressBar"></div>
+  </div>
+</div>
+<!-- Loader end -->
+    <!-- NAVIGATION -->
+    <nav id="main-nav">
+        <div class="nav-logo">
+            <div class="logo-img-wrapper">
+                <img src="https://i.ibb.co/rGmr2T9D/file-00000000293861fdb823632aa02f6294.png" 
+                     alt="AANIVER Logo"
+                     onerror="this.src='https://via.placeholder.com/32?text=A'">
+            </div>
+            <div class="logo-text">
+                AANIVER<span>.</span>ORG
+            </div>
+        </div>
+        <div class="nav-links">
+            <button class="nav-link" onclick="gotoSection('hero')">Genesis</button>
+            <button class="nav-link" onclick="gotoSection('vision')">Vision</button>
+            <button class="nav-link" onclick="gotoSection('founder')">Founder</button>
+            <button class="nav-link" onclick="gotoSection('map-section')">Impact Area</button>
+            <button class="nav-link" onclick="gotoSection('timeline')">Journey</button>
+            <button class="nav-link" onclick="gotoSection('press')">Press</button>
+            <button class="nav-link" onclick="gotoSection('impact')">Stats</button>
+            <button class="nav-cta" onclick="gotoSection('impact')">Join Us</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow" id="hero-eyebrow">Environmental Restoration Foundation</div>
+            <h1 class="hero-title" id="hero-title">
+                <span class="line"><span class="word">Save&nbsp;</span><span class="word accent">Water.</span></span>
+                <span class="line"><span class="word">Save&nbsp;</span><span class="word">the&nbsp;</span><span class="word accent">Future.</span></span>
+            </h1>
+            <p class="hero-sub" id="hero-sub">
+                Aaniver works at the intersection of nature and necessity — restoring aquifers, planting forests, and healing rivers across Tamil Nadu.
+            </p>
+            <div class="hero-ctas" id="hero-ctas">
+                <button class="btn-primary" onclick="gotoSection('vision')">Explore Mission</button>
+                <button class="btn-ghost" onclick="gotoSection('impact')">See Our Impact</button>
+            </div>
+        </div>
+        <div class="hero-scroll-hint" id="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-track">
+        <div class="marquee-inner" id="marquee-inner"></div>
+    </div>
+
+    <!-- VISION SECTION -->
+    <section id="vision">
+        <div class="vision-grid">
+            <div>
+                <div class="section-label">Our Approach</div>
+                <h2 class="vision-title">Four Pillars of<br><em style="color:var(--river);font-style:italic;">Restoration</em></h2>
+                <p style="margin-top:1.5rem;font-size:.92rem;line-height:1.8;opacity:.6;max-width:38ch;">
+                    Action isn't an option — it's the standard. We target critical environmental failures with systemic, community-driven restoration.
+                </p>
+                <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(27,48,34,.1);">
+                    <div style="display:flex;gap:2.5rem;">
+                        <div>
+                            <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-.03em;">38+</div>
+                            <div style="font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;opacity:.4;margin-top:.2rem;">Active Projects</div>
+                        </div>
+                        <div>
+                            <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-.03em;">6</div>
+                            <div style="font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;opacity:.4;margin-top:.2rem;">Districts</div>
+                        </div>
+                        <div>
+                            <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-.03em;">12k+</div>
+                            <div style="font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;opacity:.4;margin-top:.2rem;">Volunteers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card pillar-water">
+                    <div class="pillar-icon">💧</div>
+                    <div class="pillar-title">Water</div>
+                    <p class="pillar-desc">Restoring aquifers, recharging groundwater tables, and implementing community rain-harvesting systems.</p>
+                </div>
+                <div class="pillar-card pillar-forest">
+                    <div class="pillar-icon">🌳</div>
+                    <div class="pillar-title">Forestry</div>
+                    <p class="pillar-desc">Native sapling drives covering degraded land with indigenous species suited to the local ecology.</p>
+                </div>
+                <div class="pillar-card pillar-river">
+                    <div class="pillar-icon">🌊</div>
+                    <div class="pillar-title">Rivers</div>
+                    <p class="pillar-desc">Cleaning pollution at industrial and domestic sources, protecting riverine biodiversity.</p>
+                </div>
+                <div class="pillar-card pillar-wild">
+                    <div class="pillar-icon">🐾</div>
+                    <div class="pillar-title">Animals</div>
+                    <p class="pillar-desc">Establishing wildlife corridors, rescue networks, and safety zones for forest-fringe communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section id="founder">
+        <div class="founder-text">
+            <div class="section-label reveal-founder" style="color:var(--green-light);">Founder's Philosophy</div>
+            <blockquote class="founder-quote reveal-founder">
+                "The earth does not belong to us —<br>
+                <em>we belong to the earth.</em><br>
+                Every river we heal heals us."
+            </blockquote>
+            <div class="founder-attr reveal-founder">
+                <strong>SanthaKumar</strong>
+                <span> Founder, Aaniver</span>
+            </div>
+        </div>
+        <div class="founder-img">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1200"
+                 alt="Forest restoration — nature" loading="lazy" />
+            <div class="founder-img-overlay"></div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section id="map-section">
+        <div class="glow-sphere"></div>
+        <div class="brand-overlay">
+            <span class="tagline">Global Infrastructure</span>
+            <h1 class="main-title">Network<br>Node Map</h1>
+            <p class="description">
+                Visualizing real-time data flow across our integrated high-density districts. Click a node to inspect local performance metrics.
+            </p>
+        </div>
+        <div class="map-viewport">
+            <div class="map-base">
+                <svg viewBox="0 0 800 500" class="w-full h-full p-12">
+                    <defs>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <path class="district-shape" d="M150,100 L300,80 L350,200 L200,250 Z" />
+                    <path class="district-shape" d="M320,85 L500,120 L480,280 L340,240 Z" />
+                    <path class="district-shape" d="M520,130 L650,150 L680,350 L530,380 Z" />
+                    <path class="district-shape" d="M210,270 L380,290 L400,450 L250,420 Z" />
+                    <path class="district-shape" d="M420,310 L580,330 L550,480 L400,460 Z" />
+                    <line x1="225" y1="175" x2="410" y2="182" stroke="rgba(34,211,238,0.2)" stroke-dasharray="5,5" />
+                    <line x1="410" y1="182" x2="590" y2="250" stroke="rgba(34,211,238,0.2)" stroke-dasharray="5,5" />
+                </svg>
+                <div class="hotspot" style="top: 35%; left: 28%;" onclick="updateHud('Sector 7-A', '98.2%', '+2.4%')"></div>
+                <div class="hotspot" style="top: 38%; left: 51%;" onclick="updateHud('Main Hub', '99.9%', 'Stable')"></div>
+                <div class="hotspot" style="top: 55%; left: 75%;" onclick="updateHud('Data Port', '94.1%', '-1.2%')"></div>
+                <div class="hotspot" style="top: 70%; left: 45%;" onclick="updateHud('Relay 04', '97.5%', '+0.8%')"></div>
+            </div>
+        </div>
+        <div class="stats-hud">
+            <div class="hud-card">
+                <span class="hud-label">Active Nodes</span>
+                <span class="hud-value" id="node-val">1,284</span>
+                <div class="hud-trend">↑ 12% vs last month</div>
+            </div>
+            <div class="hud-card">
+                <span class="hud-label">Network Load</span>
+                <span class="hud-value" id="load-val">42.5 TB/s</span>
+                <div class="hud-trend">Operating at peak</div>
+            </div>
+            <div class="hud-card">
+                <span class="hud-label">System Health</span>
+                <span class="hud-value" id="health-val">Optimal</span>
+                <div class="hud-trend" style="color: var(--accent-cyan)">All systems nominal</div>
+            </div>
+        </div>
+    </section>
+  
+  <!-- Our Work Start-->
+   <div class="aaniver-core">
+  <div class="shell">
+    
+  
+
+    <div class="hero-2">
+      <div class="hero-text-2">
+        <h1 class="hero-title-2">Restore.<br>Revive.<br>Grow.</h1>
+        <div class="sbar-2">
+          <input type="text" placeholder="Explore projects..."/>
+          <button class="sbar-go-2">Go</button>
+        </div>
+        <div class="stat-text-2"><strong>10,000+</strong> Trees Planted</div>
+      </div>
+
+      <div class="strip-2" id="strip-aaniver">
+        <div class="pc-2 open-2">
+          <img src="https://i.pinimg.com/736x/74/16/a8/7416a8b19c66898daa73ee69168de34a.jpg" alt="Lakes"/>
+          <div class="pc-vtag-2"><span>Lakes</span></div>
+          <div class="pc-count-2"><strong>12</strong><span>Lakes</span></div>
+          <div class="pc-info-2">
+            <h3>Lake Restoration</h3>
+            <p>Desilting and cleaning water bodies across Coimbatore.</p>
+          </div>
+        </div>
+
+        <div class="pc-2">
+          <img src="https://i.pinimg.com/736x/6a/fa/dd/6afadd576bdbab6a7c5b2e97ad3ec55a.jpg" alt="Forestry"/>
+          <div class="pc-vtag-2"><span>Forestry</span></div>
+          <div class="pc-count-2"><strong>5k</strong><span>Saplings</span></div>
+          <div class="pc-info-2">
+            <h3>Urban Forestry</h3>
+            <p>Creating Miyawaki forests to boost biodiversity.</p>
+          </div>
+        </div>
+
+        <div class="pc-2">
+          <img src="https://i.pinimg.com/736x/40/6e/c3/406ec300370a8f967b2651ebc772a33d.jpg" alt="Waste"/>
+          <div class="pc-vtag-2"><span>Waste</span></div>
+          <div class="pc-count-2"><strong>20t</strong><span>Removed</span></div>
+          <div class="pc-info-2">
+            <h3>Waste Management</h3>
+            <p>Stopping plastic from entering our water ecosystems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      
+  <!--Our Work end-->
+
+  <!-- Our Mission Start-->
+    <!-- scroll progress -->
+<div class="progress-line" id="progressLine"></div>
+
+<section class="insights-section" id="insightsSection">
+  <div class="blob blob-1" id="blob1"></div>
+  <div class="blob blob-2" id="blob2"></div>
+  <div class="blob blob-3"></div>
+  <div class="grain"></div>
+
+  <div class="insights-container">
+
+    <!-- HEADER -->
+    <div class="insights-header">
+      <div class="header-left">
+        <p class="sub-pill" id="subPill">
+          <span class="dot"></span>
+          எங்கள் முயற்சி · Our Mission
+        </p>
+        <h2 class="main-title" id="mainTitle">
+          இயற்கையை <em>மீட்டெடுப்போம்</em><br>
+          சமூகத்தை <em>உயர்த்துவோம்</em>
+        </h2>
+        <div class="accent-rule" id="accentRule">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="header-desc" id="headerDesc">
+          தமிழ்நாடு முழுவதும் நீர், காடு மற்றும் சமூகங்களை பாதுகாக்கும் செயலில்
+          ஆணிவேர் தொடர்ந்து செயல்படுகிறது — restoring rivers, forests, and futures.
+        </p>
+      </div>
+      <div class="header-right" id="headerRight">
+        <div class="stat-item">
+          <span class="stat-num">12K+</span>
+          <span class="stat-label">Trees Planted</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">48</span>
+          <span class="stat-label">Villages Reached</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">7</span>
+          <span class="stat-label">River Basins</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="insights-grid" id="insightsGrid">
+
+      <!-- card 1: Wide cinematic — Forest canopy -->
+      <div class="insight-card card-1" data-cursor="explore">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=85"
+               alt="Dense tropical forest canopy" loading="lazy">
+        </div>
+        <div class="card-overlay"></div>
+        <span class="card-badge">Featured</span>
+        <div class="card-leaf">🌿</div>
+        <div class="card-label">
+          <span class="lbl-icon">🌳</span>
+          Forests Reborn
+        </div>
+      </div>
+
+      <!-- card 2: Tall portrait — Water stream close-up -->
+      <div class="insight-card card-2">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=85"
+               alt="Clear mountain stream in forest" loading="lazy">
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-leaf">💧</div>
+        <div class="card-label">
+          <span class="lbl-icon">💧</span>
+          Water Secured
+        </div>
+      </div>
+
+      <!-- card 3: Square — Community hands planting -->
+      <div class="insight-card card-3">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=700&q=85"
+               alt="Community members planting saplings together" loading="lazy">
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-leaf">🤝</div>
+        <div class="card-label">
+          <span class="lbl-icon">🤝</span>
+          Communities Rising
+        </div>
+      </div>
+
+      <!-- card 4: Landscape — Aerial green hills -->
+      <div class="insight-card card-4">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=85"
+               alt="Aerial view of lush green forest hills" loading="lazy">
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-leaf">🌿</div>
+        <div class="card-label">
+          <span class="lbl-icon">🌿</span>
+          Green Cover Restored
+        </div>
+      </div>
+
+      <!-- card 5: Landscape — River flowing through trees -->
+      <div class="insight-card card-5">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=85"
+               alt="River winding through green valley" loading="lazy">
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-leaf">🏞️</div>
+        <div class="card-label">
+          <span class="lbl-icon">🏞️</span>
+          Rivers Protected
+        </div>
+      </div>
+
+      <!-- card 6: Square — Sapling in rich soil -->
+      <div class="insight-card card-6">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=85"
+               alt="Young sapling growing in fertile soil" loading="lazy">
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-leaf">🌱</div>
+        <div class="card-label">
+          <span class="lbl-icon">🌾</span>
+          Soil Revitalized
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Our Mission End-->
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline">
+        <div class="timeline-wrap">
+            <div class="timeline-rail"></div>
+            <div id="timeline-progress"></div>
+            <div class="timeline-item left">
+                <div class="timeline-card">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-heading">The Beginning</div>
+                    <div class="timeline-body">
+                        Started the journey with passion and curiosity to explore design and development.
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-card">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-heading">Skill Building</div>
+                    <div class="timeline-body">
+                        Learned core skills like HTML, CSS, and design fundamentals.
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-card">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-heading">Freelance Work</div>
+                    <div class="timeline-body">
+                        Started working on real projects and building a strong portfolio.
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-card">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-heading">Scaling Up</div>
+                    <div class="timeline-body">
+                        Focused on premium UI/UX and building impactful digital experiences.
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESS SECTION -->
+    <section id="press">
+        <div class="press-header">
+            <div>
+                <div class="section-label">In The News</div>
+                <h2 class="press-title">The World is<br><em>Watching.</em></h2>
+            </div>
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterNews('all',this)">All</button>
+                <button class="tab-btn" onclick="filterNews('water',this)">Water</button>
+                <button class="tab-btn" onclick="filterNews('forest',this)">Forestry</button>
+                <button class="tab-btn" onclick="filterNews('river',this)">Rivers</button>
+                <button class="tab-btn" onclick="filterNews('award',this)">Awards</button>
+            </div>
+        </div>
+        <div class="press-ticker">
+            <div class="ticker-label">LIVE</div>
+            <div class="ticker-track" id="ticker-a"></div>
+            <div class="ticker-track" id="ticker-b" aria-hidden="true"></div>
+        </div>
+        <div class="clipping-featured" data-category="water" id="feat-clipping">
+            <div class="feat-image">
+                <div style="text-align:center;">
+                    <div class="breaking-news-label">Breaking News</div>
+                    <h2 class="water-crisis-title">Water Crisis</h2>
+                    <div class="location-badge">Tamil Nadu</div>
+                </div>
+            </div>
+            <div class="feat-body">
+                <div class="pub-name">The New Indian Express — Tamil Nadu</div>
+                <div class="clipping-date">26 November 2024</div>
+                <div class="col-rule"></div>
+                <h3 class="feat-headline">
+                    Somaiyampalayam Residents in Anguish as Two Ponds Polluted by Garbage
+                </h3>
+                <p class="feat-byline">
+                    Reported by New Indian Express Correspondent
+                </p>
+                <p class="feat-excerpt">
+                    Residents of Somaiyampalayam are facing serious environmental and health concerns as two major water bodies in the region have been heavily polluted due to continuous dumping of garbage. The situation highlights the urgent need for sustainable waste management and restoration efforts to protect local ecosystems and public health.
+                </p>
+                <a href="https://www.newindianexpress.com/states/tamil-nadu/2024/Nov/26/somaiyampalayam-residents-in-anguish-as-two-ponds-polluted-by-piles-of-garbage"
+                   target="_blank"
+                   class="feat-read-more">
+                    Read Full Article →
+                </a>
+            </div>
+        </div>
+        <div class="clippings-grid" id="clippings-grid"></div>
+        <div class="press-logos-strip">
+            <p class="press-logos-label">As covered by</p>
+            <div class="logos-row">
+                <span class="logo-item">The Hindu</span>
+                <span class="logo-item">Times of India</span>
+                <span class="logo-item">Dinamalar</span>
+                <span class="logo-item">Deccan Chronicle</span>
+                <span class="logo-item">New Indian Express</span>
+                <span class="logo-item">Vikatan</span>
+                <span class="logo-item">Hindu BusinessLine</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+    <div class="contact-wrapper">
+        <div>
+            <div class="section-label">Get In Touch</div>
+            <h2 class="contact-title">
+                Let's Build <em>Impact</em> Together
+            </h2>
+            <p class="contact-sub">
+                Partner with Aaniver to restore ecosystems, empower communities, and drive sustainable change across Tamil Nadu.
+            </p>
+            <div class="contact-details">
+                <div>Email: contact@aaniver.org</div>
+                <div>Phone: +91 9876543210</div>
+                <div>Location: Tamil Nadu, India</div>
+            </div>
+        </div>
+        <form class="contact-form" onsubmit="sendMessage(event)">
+            <div class="input-group">
+                <input type="text" id="userName" required>
+                <label>Name</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="userEmail" required>
+                <label>Email</label>
+            </div>
+            <div class="input-group">
+                <textarea id="userMessage" rows="4" required></textarea>
+                <label>Message</label>
+            </div>
+            <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+  <!-- Contact End-->
+  
+<!-- Donation Start-->
+ 
+  <!--Donation End-->
+  
+    <!-- IMPACT SECTION -->
+    <section id="impact">
+        <div class="impact-bg"></div>
+        <div class="section-label" style="color:var(--green-light);justify-content:center;position:relative;z-index:2;margin-bottom:.75rem;">
+            Global Footprint
+        </div>
+        <h2 class="impact-title">Our Impact<br><em style="font-style:italic;color:var(--green-light);">in Numbers</em></h2>
+        <p class="impact-sub">Measured outcomes across every restoration project</p>
+        <div class="counters-grid">
+            <div class="counter-cell">
+                <span class="counter-num" style="color:var(--river);" data-target="450">0</span>
+                <div class="counter-label">Litres Saved (Millions)</div>
+            </div>
+            <div class="counter-cell">
+                <span class="counter-num" style="color:var(--green-light);" data-target="82">0</span>
+                <div class="counter-label">Hectares Reforested</div>
+            </div>
+            <div class="counter-cell">
+                <span class="counter-num" style="color:#f87171;" data-target="15">0</span>
+                <div class="counter-label">Wildlife Shelters</div>
+            </div>
+        </div>
+        <button class="join-btn">
+            Join the Root System <span class="join-arrow">→</span>
+        </button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">AANIVER.</div>
+        <div>© 2024 Aaniver Environmental Foundation</div>
+        <div>Crafted for Earth.</div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
